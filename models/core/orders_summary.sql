@@ -1,4 +1,4 @@
--- models/core/orders_summary.sql
+-- Aggregation or Analytics layer
 
 WITH base AS (
     SELECT
