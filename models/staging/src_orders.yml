@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_schema
+    database: ECOMMERCE_DB
+    schema: RAW_SCHEMA
+    tables:
+      - name: orders_report
+        description: "Orders data from source system"
+
