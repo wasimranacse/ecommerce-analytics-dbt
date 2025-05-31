@@ -11,7 +11,7 @@ cleaned AS (
         lower(status) AS status,
         customer AS customer_name,
         customer_type,
-        DATE::DATE AS order_date,
+        "DATE" AS order_date,
         row_number() OVER (PARTITION BY order_id ORDER BY DATE DESC) AS row_num
     FROM source
     WHERE order_id IS NOT NULL
