@@ -1,7 +1,5 @@
 -- models/marts/facts/fact_orders.sql
 
--- models/marts/facts/fact_orders.sql
-
 SELECT
     order_id,
     order_date,
