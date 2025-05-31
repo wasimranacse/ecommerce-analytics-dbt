@@ -1,4 +1,4 @@
-# E-commerce Analytics DBT Project
+# Analytics Engineering with Snowflake, dbt & SQL
 
 This dbt project transforms and models e-commerce order data using Snowflake as the data warehouse.
 
