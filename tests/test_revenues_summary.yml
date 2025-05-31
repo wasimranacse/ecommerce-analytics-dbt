@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: revenues_summary
+    description: Summary of daily revenue metrics
+    columns:
+      - name: revenue_date
+        description: Date of the revenue report
+        tests:
+          - not_null
+          - unique
+      - name: total_orders
+        description: Number of orders for the day
+        tests:
+          - not_null
+      - name: total_gross_sales
+        description: Gross sales amount for the day
+        tests:
+          - not_null
+      - name: total_returns
+        description: Returns amount for the day
+        tests:
+          - not_null
+      - name: total_coupons
+        description: Coupon discounts for the day
+        tests:
+          - not_null
+      - name: total_net_sales
+        description: Net sales after returns and discounts
+        tests:
+          - not_null
+      - name: total_taxes
+        description: Taxes applied on sales
+        tests:
+          - not_null
+      - name: total_shipping
+        description: Shipping charges
+        tests:
+          - not_null
+      - name: total_sales
+        description: Final total sales (net + taxes + shipping)
+        tests:
+          - not_null

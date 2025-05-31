@@ -1,21 +1,23 @@
-with base as (
-    select
-        cast(product_title as string) as product_title,
-        cast(category as string) as category,
-        cast(items_sold as number) as items_sold,
-        cast(net_revenue as number) as net_revenue,
-        cast(orders as number) as orders,
-        cast(variations as number) as variations
+-- models/staging/stg_products.sql
 
-    from {{ source('raw_schema', 'products_report') }}
+WITH base AS (
+    SELECT
+        CAST(product_title AS STRING) AS product_title,
+        CAST(category AS STRING) AS category,
+        CAST(items_sold AS NUMBER) AS items_sold,
+        CAST(net_revenue AS NUMBER) AS net_revenue,
+        CAST(orders AS NUMBER) AS orders,
+        CAST(variations AS NUMBER) AS variations
+
+    FROM {{ source('raw_schema', 'products_report') }}
 ),
 
-deduplicated as (
-    select *,
-        row_number() over (partition by items_sold order by net_revenue desc) as row_num
-    from base
+deduplicated AS (
+    SELECT *,
+        row_number() OVER (PARTITION BY items_sold ORDER BY net_revenue DESC) AS row_num
+    FROM base
 )
 
-select *
-from deduplicated
-where row_num = 1
+SELECT *
+FROM deduplicated
+WHERE row_num = 1

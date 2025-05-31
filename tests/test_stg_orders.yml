@@ -8,7 +8,6 @@ models:
         tests:
           - not_null
           - unique
-
       - name: status
         tests:
           - accepted_values:

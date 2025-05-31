@@ -7,23 +7,18 @@ models:
       - name: product_title
         tests:
           - not_null
-
       - name: category
         tests:
           - not_null
-
       - name: items_sold
         tests:
           - not_null
-
       - name: net_revenue
         tests:
           - not_null
-
       - name: orders
         tests:
           - not_null
-
       - name: variations
         tests:
           - not_null

@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_revenues
+    description: Staging model for revenue summary data
+    columns:
+      - name: revenue_date
+        description: Date of the revenue record
+        tests:
+          - not_null
+      - name: orders
+        description: Total number of orders for the day
+        tests:
+          - not_null
+      - name: gross_sales
+        description: Total gross sales
+        tests:
+          - not_null
+      - name: returns
+        description: Total amount of returns
+        tests:
+          - not_null
+      - name: coupons
+        description: Total discount applied using coupons
+        tests:
+          - not_null
+      - name: net_sales
+        description: Net sales after coupons and returns
+        tests:
+          - not_null
+      - name: taxes
+        description: Taxes collected on sales
+        tests:
+          - not_null
+      - name: shipping
+        description: Shipping revenue
+        tests:
+          - not_null
+      - name: total_sales
+        description: Total sales after applying taxes and shipping
+        tests:
+          - not_null
